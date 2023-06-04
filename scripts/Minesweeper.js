@@ -16,6 +16,7 @@ export class Minesweeper {
         this.leaderboard = leaderboard
     }
 
+    //creates arrays of Tiles of required size
     createTileMatrix(size_x,size_y){
         const matrix = []
         for (let y = 0; y < size_y;y++){
@@ -27,7 +28,8 @@ export class Minesweeper {
         }
         return matrix
     }
-
+    
+    // Updates css property based on size -> html can scale properly
     changeCssSize(size){
         const root = document.querySelector(':root');
         root.style.setProperty('--size', String(size));
@@ -54,6 +56,8 @@ export class Minesweeper {
         return element
     }
 
+    
+    // prepares for start of a new game
     setup(bombs = this.numberOfBombs, size = this.size){
         this.numberOfBombs = bombs;
         this.size = size
@@ -102,6 +106,7 @@ export class Minesweeper {
         }
     }
 
+    // reveals island of tiles that dont have bombs nearby and their edges starting from tile at x,y
     revealZeroValueIslandRecursive(x, y){
         const myTile = this.tiles[x][y]
         if(myTile.getElement().classList.contains("tileHidden")){
@@ -112,6 +117,7 @@ export class Minesweeper {
         }
     }
 
+    // returns neigboring tiles icluding corners -> max 8 neighbours returned
     getNeighbours(targetX,targetY){
         let neighbours = []
         for(let x = Math.max(0,targetX-1); x<=Math.min(targetX+1,this.tiles[0].length-1); x++){
@@ -145,6 +151,8 @@ export class Minesweeper {
             }
         }
     }
+    
+    // remove old game and display new one
     rerender(){
         let prevElement = this.element
         this.setup()
@@ -185,7 +193,8 @@ export class Minesweeper {
         this.modal.show(type)
         this.timer.end()
     }
-
+    
+    // reveals all bombs, used only at end of failed game
     revealBombs() {
         for(const bombElement of this.bombTiles){
             this.tiles[bombElement.getX()][bombElement.getY()].reveal()
