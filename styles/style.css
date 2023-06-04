@@ -1,3 +1,5 @@
+/* General */
+
 :root{
     --tile-size: 30px;
     --size: 1px;
@@ -6,60 +8,27 @@
 *{
     font-family: "Microsoft YaHei UI",sans-serif;
 }
+
+a{
+    text-decoration: none;
+    color: #eff3f7;
+}
+
 body{
     margin: 0;
     background-color: #f6f3ed;
     counter-reset: rows;
 }
-#sizeSelection form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#sizeSelection form > *{
-    padding: 15px;
-}
-#time{
-    display: inline-block;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #100c08;
-    color: #eff3f7;
-}
-header h1{
-    margin: 0;
-}
-header *{
-    padding: 10px;
-}
+
 #mainContent{
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 15px;
 }
-table{
-    width: 100%;
-    margin-top: 20px;
-}
-table tr{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    width: 100%;
-}
-table tr td,th{
-    text-align: center;
-    width: 25%;
-}
-a{
-    text-decoration: none;
-    color: #eff3f7;
-}
+
+/* Game board */
+
 #game{
     display: none;
 }
@@ -90,7 +59,6 @@ a{
     font-size: calc(var(--tile-size)*0.75);
     background-color: #8d8d8d;
 }
-
 .hiddenContent{
     font-size: 0;
 }
@@ -106,6 +74,52 @@ a{
         --tile-size: calc((100vw / var(--size)) - 2px);
     }
 }
+
+/* Headers */
+#sizeSelection form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sizeSelection form > *{
+    padding: 15px;
+}
+#time{
+    display: inline-block;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #100c08;
+    color: #eff3f7;
+}
+header h1{
+    margin: 0;
+}
+header *{
+    padding: 10px;
+}
+
+/* Leaderboard*/
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+table tr{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+table tr td,th{
+    text-align: center;
+    width: 25%;
+}
+
+
+/* Modal */
 #modal{
     position: fixed;
     width: 100%;
