@@ -62,12 +62,13 @@ export class Modal{
         this.element.style.display = "none"
     }
 
+    // handles new game of same size
     replay() {
         this.hide()
         this.game.rerender()
     }
 
-
+    // handles displaying form where user can select size
     changeSize() {
         this.hide()
         const form = document.getElementById("sizeSelection");
