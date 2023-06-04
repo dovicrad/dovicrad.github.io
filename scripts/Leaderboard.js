@@ -5,6 +5,7 @@ export class Leaderboard {
         this.element = this.buildElement(this.size)
     }
 
+    // update size of map -> fetch new data if needed
     update(size){
         if(localStorage[size] === undefined){
             this.times = []
@@ -16,6 +17,7 @@ export class Leaderboard {
         this.size = size
         this.element = this.buildElement()
     }
+    
     buildElement(){
         const table = document.createElement("table")
         if(this.times.length > 0) {
@@ -54,10 +56,10 @@ export class Leaderboard {
     replaceElement(){
         let prevElement = this.element
         this.element = this.buildElement()
-
         prevElement.parentNode.replaceChild(this.element,prevElement)
     }
 
+    // adds new record to leaderboard
     addTime(time){
         this.times.push(time)
         this.times = this.filter(this.times)
@@ -73,6 +75,7 @@ export class Leaderboard {
         return this.element;
     }
 
+    // filters top 10 time records ascending
     filter(times) {
         const sortedArray = times.sort((a, b) => a - b);
         return sortedArray.slice(0, 10);
