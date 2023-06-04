@@ -1,0 +1,8 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <ellipse ry="75" rx="75" cy="150" cx="150" stroke="#000" fill="#000"/>
+  <line y2="150" x2="275" y1="150" x1="25" stroke-width="25" stroke="#000" fill="none"/>
+  <line transform="rotate(90, 150, 150)" y2="150" x2="275" y1="150" x1="25" stroke-width="25" stroke="#000" fill="none"/>
+  <line transform="rotate(45, 150, 150)"  y2="150" x2="275" y1="150" x1="25" stroke-width="25" stroke="#000" fill="none"/>
+  <line transform="rotate(-45, 150, 150)" y2="150" x2="275" y1="150" x1="25" stroke-width="25" stroke="#000" fill="none"/>
+  <ellipse ry="20" rx="20" cy="125" cx="125" stroke="#000" fill="#fff"/>
+</svg>

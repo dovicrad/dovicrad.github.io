@@ -1,0 +1,132 @@
+:root{
+    --tile-size: 30px;
+    --size: 1px;
+}
+
+*{
+    font-family: "Microsoft YaHei UI",sans-serif;
+}
+body{
+    margin: 0;
+    background-color: #f6f3ed;
+    counter-reset: rows;
+}
+#sizeSelection form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sizeSelection form > *{
+    padding: 15px;
+}
+#time{
+    display: inline-block;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #100c08;
+    color: #eff3f7;
+}
+header h1{
+    margin: 0;
+}
+header *{
+    padding: 10px;
+}
+#mainContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+}
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+table tr{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+table tr td,th{
+    text-align: center;
+    width: 25%;
+}
+a{
+    text-decoration: none;
+    color: #eff3f7;
+}
+#game{
+    display: none;
+}
+#gameHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.gameRow{
+    display: flex;
+    counter-increment: rows;
+}
+.tile{
+    width: var(--tile-size);
+    height: var(--tile-size);
+    line-height: var(--tile-size);
+    border: 1px solid black;
+    text-align: center;
+    transition: background-color 0.3s ease-in;
+
+}
+
+.tileHidden{
+    font-size: 0;
+    background-color: #5E5E5E;
+}
+.tileVisible{
+    font-size: calc(var(--tile-size)*0.75);
+    background-color: #8d8d8d;
+}
+
+.hiddenContent{
+    font-size: 0;
+}
+
+.tileVisible.bomb{
+    background-image: url("/resources/bomb.svg");
+}
+.tileHidden.flag{
+    background-image: url("/resources/flag.svg");
+}
+@media only screen and (max-width: 960px) {
+    :root{
+        --tile-size: calc((100vw / var(--size)) - 2px);
+    }
+}
+#modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+#modalContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: rgb(200,200,200);
+}
+#modalContent > *{
+    padding: 5px;
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>minesweeper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="PhpstormProjects/untitled/minesweep/styles/style.css"/>
+</head>
+<body>
+    <header>
+        <h1><a href="/">KAJ - Minesweeper</a></h1>
+        <div>Radek Doviczin</div>
+    </header>
+    <div id="mainContent">
+        <section id="sizeSelection">
+            <h2>Choose game size:</h2>
+            <form id="optionForm">
+                <input type="radio" id="option1" name="option" value="option1" />
+                <label for="option1">10x10</label>
+                <input type="radio" id="option2" name="option" value="option2" checked="checked"/>
+                <label for="option2">20x20</label>
+                <input type="radio" id="option3" name="option" value="option3" />
+                <label for="option3">30x30</label>
+                <button type="submit">Play !</button>
+            </form>
+        </section>
+        <div id="game">
+            <div id="gameHeader">
+                <div>current time:</div>
+                <div>
+                    <div id="time">0</div> sec
+                </div>
+            </div>
+            <div id="gameContainer"></div>
+        </div>
+    </div>
+
+</body>
+<script type="module" src="PhpstormProjects/untitled/minesweep/scripts/main.js"></script>
+</html>
