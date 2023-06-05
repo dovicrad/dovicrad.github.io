@@ -117,6 +117,15 @@ table tr td,th{
     text-align: center;
     width: 25%;
 }
+table tr:nth-child(3){
+    background-color: #f2f22f;
+}
+table tr:nth-child(4){
+    background-color: #f2972f;
+}
+table tr:nth-child(5){
+    background-color: #9f9f9f;
+}
 
 
 /* Modal */
